@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -15,4 +15,155 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+:root {
+    --main-color: #A94719;
+}
+
+#cardGroup img {
+    /* height: 200px;
+          object-fit: cover; */
+}
+
+#rtnTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    z-index: 99;
+    background-color: var(--main-color);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+    #rtnTop:hover {
+        transform: translateY(-10px);
+    }
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(234, 246, 255, 0.5);
+    z-index: 99;
+}
+
+    header img {
+        max-width: 80px;
+    }
+
+.carousel-item img {
+    max-width: 100%;
+    /*不使用width:100% 是因避免圖片解析度不好，隨父元素被放大時會糊掉*/
+    height: 500px;
+    object-fit: cover;
+}
+
+#nav-menu {
+    position: absolute;
+    right: 0px;
+}
+
+.nav-item a {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+#activity {
+    padding: 20px;
+}
+
+.activity-item {
+    position: relative;
+    height: 300px;
+    box-sizing: border-box;
+    width: calc(50% - 50px);
+    width: 400px;
+    margin: 30px 25px 30px 25px;
+}
+
+    .activity-item img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* 奇数的 card 元素 */
+    .activity-item:nth-child(odd) {
+        top: -20px;
+        left: 0px;
+    }
+
+    /* 偶数的 card 元素 */
+    .activity-item:nth-child(even) {
+        top: 20px;
+        right: 0px;
+    }
+
+#menuTitle {
+    padding: 10px;
+    text-align: center;
+    background-color: #A94719;
+    margin-bottom: 0;
+    color: #FAFAFE;
+}
+
+#cardGroup {
+    padding: 20px 10px;
+    background-color: #FAD6B1;
+    margin: 0;
+}
+
+footer {
+    padding: 20px;
+    /* height: 200px; */
+    background-color: #333;
+    color: #ccc;
+    line-height: 0.5 !important;
+}
+
+#copyright {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 1024px) {
+
+    #activity {
+        margin: 40px 0;
+    }
+
+    .activity-item {
+        height: 250px;
+        width: 80%;
+        position: relative;
+        overflow: hidden;
+        margin: -5px;
+    }
+
+
+        .activity-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .activity-item .card-body {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0);
+            /* 调整文本背景透明度 */
+            padding: 10px;
+        }
 }

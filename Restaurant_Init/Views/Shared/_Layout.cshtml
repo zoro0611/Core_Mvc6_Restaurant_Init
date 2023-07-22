@@ -3,23 +3,38 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Restaurant_Init</title>
+    <title>@ViewData["Title"] -  河粉</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Restaurant_Init.styles.css" asp-append-version="true" />
+
+    @await RenderSectionAsync("TopCSS", required: false)
 </head>
 <body>
     <header>
-        @if (User.Identity.IsAuthenticated)
-        {
-            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
-                <button type="submit" class="btn btn-link">Logout</button>
-            </form>
-        }
-        else
-        {
-            <a class="btn btn-link" href="/Account/Login">Login</a>
-        }
+        <img src="./pic/logores.png" alt="" />
+        <h3 class="mx-3">阮梅越南河粉</h3>
+        <ul id="nav-menu" class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#">發現越南</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">菜單介紹</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">食尚快訊</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">聯絡我們</a>
+            </li>
+        </ul>
+        <div id="rtnTop">
+            <a href="#">TOP</a>
+        </div>
+
+
+
+        
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -28,7 +43,21 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        
+        <p>
+        地址:
+        <Span>40444台中市北區精武路239號</Span>
+        </p>
+        <p id="copyright">© Copyright from Nuygen Mai. All Rights Reserved.</p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                <button type="submit" class="btn btn-link">Logout</button>
+            </form>
+        }
+        else
+        {
+            <a class="btn btn-link" href="/Account/Login" style="color: var(--main-color);">[Admin Login]</a>
+        }
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

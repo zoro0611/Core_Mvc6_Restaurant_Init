@@ -3,7 +3,11 @@
 @{
     var errorMessage = TempData["ErrorMessage"] as string;
 }
-<h2>Login</h2>
+
+@section TopCSS
+{
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+}
 @if (!string.IsNullOrEmpty(errorMessage))
 {
     <div class="alert alert-danger">

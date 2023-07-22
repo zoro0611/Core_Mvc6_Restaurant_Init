@@ -46,7 +46,7 @@ namespace Restaurant_Init.Controllers
                     await HttpContext.SignInAsync("MyCookieAuthenticationScheme", new ClaimsPrincipal(identity));
 
                     // 跳轉到登入成功後的頁面
-                    return RedirectToAction("Privacy", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

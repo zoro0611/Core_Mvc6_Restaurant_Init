@@ -3,13 +3,98 @@
 @{
     ViewData["Title"] = "Home";
 }
-<h1>@ViewData["Title"]</h1>
 
-@{
-    foreach (var user in Model)
-    {
-        <p>@user.Id</p>
-        <p>@user.Username</p>
-        <p>@user.LastLoginDateTime</p>
-    }
-}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="pic/header.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="pic/header2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="pic/header3.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div id="activity" class="d-flex flex-wrap justify-content-center">
+    <div class="card activity-item">
+        <img src="https://www.chamonix.com.tw/photo_room/cmn_fourone_1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">製造愛情｜兩人手機號碼皆有1或2消費兩客套餐贈海洋鮑貝</p>
+        </div>
+    </div>
+    <div class="card activity-item">
+        <img src="https://www.chamonix.com.tw/photo_room/ribeyeandcap.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">期間限定上市｜法式饗宴套餐</p>
+        </div>
+    </div>
+</div>
+
+<h3 id="menuTitle">經典菜單</h3>
+<div id="cardGroup" class="row">
+
+    <div class="col-lg-6">
+        <div class="card mb-3">
+            <img src="https://tokyo-kitchen.icook.network/uploads/recipe/cover/190062/cc5a972b578225f0.jpg"
+                 class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">鮮牛肉河粉</h5>
+                <p class="card-text">鮮牛肉河粉是一道越南傳統美食，以嫩滑的河粉搭配鮮嫩的牛肉片為特色，搭配豐富的調味料和香草，口感鮮美。</p>
+                <p class="card-text"><small class="text-muted">100<span>NTD</span></small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card mb-3">
+            <img src="https://chubby.tw/wp-content/uploads/20210220231331_73.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">牛肉河粉(綜合)</h5>
+                <p class="card-text">牛肉河粉(綜合)是一道豐富的越南料理，以河粉、牛肉片和牛腩為主要配料，加上豬肉丸、豬血糕等綜合肉品，搭配獨特的湯頭和調味料，美味又滿足。</p>
+                <p class="card-text"><small class="text-muted">100<span>NTD</span></small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card mb-3">
+            <img src="https://g.udn.com.tw/upfiles/B_LO/louisecafe/PSN_PHOTO/275/f_10114275_1.JPG" class="card-img-top"
+                 alt="">
+            <div class="card-body">
+                <h5 class="card-title">順化牛肉米線</h5>
+                <p class="card-text">細緻米線搭配鮮嫩牛肉，湯頭獨特香料調製，口感豐富，受人喜愛的美味選擇。</p>
+                <p class="card-text"><small class="text-muted">100<span>NTD</span></small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card mb-3">
+            <img src="https://s.yimg.com/ny/api/res/1.2/Xo7LlCVWF_qHA1mVfzZsfw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://media.zenfs.com/zh-Hant-TW/homerun/yahoo__216/ccfdf1d99714851bc7ca17999c30e254"
+                 class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">牛肉炒飯</h5>
+                <p class="card-text">牛肉炒飯是一道經典的中式炒飯菜品，以嫩煮的牛肉與香氣撲鼻的米飯翻炒而成，口感豐富，美味可口。</p>
+                <p class="card-text"><small class="text-muted">100<span>NTD</span></small></p>
+            </div>
+        </div>
+    </div>
+</div>
