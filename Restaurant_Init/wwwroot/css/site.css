@@ -19,9 +19,16 @@ body {
 
 
 body {
-    font-family: "Noto Sans TC", sans-serif;
+    font-family: "微軟正黑體";
 }
-
+h1{
+    font-weight: bold;
+    font-size: 26px;
+}
+h5{
+    font-weight: bold;
+    font-size: 18px;
+}
 :root {
     --main-color: #A94719;
 }
@@ -130,7 +137,9 @@ footer {
     color: #ccc;
     line-height: 0.5 !important;
 }
-
+footer p {
+    line-height: initial;
+}
 #copyright {
     font-size: 12px;
 }

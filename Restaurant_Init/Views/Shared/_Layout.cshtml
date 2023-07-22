@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] -  河粉</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Restaurant_Init.styles.css" asp-append-version="true" />
-
+    
     @await RenderSectionAsync("TopCSS", required: false)
 </head>
 <body>
     <header>
-        <img src="./pic/logores.png" alt="" />
-        <h3 class="mx-3">阮梅越南河粉</h3>
+        <img src="~/pic/logores.png" alt="" />
+        <h1 class="mx-3">阮梅越南河粉</h1>
         <ul id="nav-menu" class="nav nav-pills">
             <li class="nav-item">
                 <a class="nav-link" href="#">發現越南</a>
@@ -51,7 +52,7 @@
         @if (User.Identity.IsAuthenticated)
         {
             <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
-                <button type="submit" class="btn btn-link">Logout</button>
+                <button type="submit" class="btn btn-link" style="color: var(--main-color);">Logout</button>
             </form>
         }
         else
@@ -62,6 +63,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("EndJS", required: false)
 </body>
 </html>
