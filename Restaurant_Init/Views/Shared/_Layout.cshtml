@@ -10,7 +10,16 @@
 </head>
 <body>
     <header>
-
+        @if (User.Identity.IsAuthenticated)
+        {
+            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                <button type="submit" class="btn btn-link">Logout</button>
+            </form>
+        }
+        else
+        {
+            <a class="btn btn-link" href="/Account/Login">Login</a>
+        }
     </header>
     <div class="container">
         <main role="main" class="pb-3">

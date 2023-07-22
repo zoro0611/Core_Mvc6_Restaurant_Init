@@ -5,7 +5,7 @@ using Restaurant_Init.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Configuration["ConnectionStrings:Restaurant"] = builder.Configuration["ConnectionStrings:Restaurant"];
+builder.Configuration["ConnectionStrings:Restaurant"] = builder.Configuration["ConnectionStrings:Restaurant"];
 builder.Services.AddDbContext<RestaurantContext>(
     options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("Restaurant"))
