@@ -32,9 +32,13 @@ namespace Restaurant_Init.Controllers
                 var user = _userRepos.GetAllReadOnly().SingleOrDefault(x => x.UserId == model.UserId && x.Password == model.Password);
                 if (user is not null)// 資料庫有對應的使用者資訊，驗證登入通過
                 {
-                    
+
 
                     // 其他需要的使用者資訊，可以在這裡設定
+                    Response.Cookies.Append("AdminName", user.Username, new Microsoft.AspNetCore.Http.CookieOptions
+                    {
+                        Expires = DateTime.Now.AddMinutes(60)
+                    });
 
                     // 將使用者資訊存入 Session 或其他認證機制中
                     var claims = new List<Claim>

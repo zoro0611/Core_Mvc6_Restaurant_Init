@@ -51,9 +51,14 @@
         <p id="copyright">© Copyright from Nuygen Mai. All Rights Reserved.</p>
         @if (User.Identity.IsAuthenticated)
         {
-            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
-                <button type="submit" class="btn btn-link" style="color: var(--main-color);">[登出]</button>
-            </form>
+            string username = Context.Request.Cookies["AdminName"];
+            <div class="d-flex align-items-center">
+                <span style="color: var(--main-color);">您好，@username</span>
+                <form class="d-inline" asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                    <button type="submit" class="btn btn-link" style="color: var(--main-color);">[登出]</button>
+                </form>
+            </div>
+            
         }
         else
         {
