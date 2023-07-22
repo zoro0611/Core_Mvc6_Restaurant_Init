@@ -52,12 +52,12 @@
         @if (User.Identity.IsAuthenticated)
         {
             <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
-                <button type="submit" class="btn btn-link" style="color: var(--main-color);">Logout</button>
+                <button type="submit" class="btn btn-link" style="color: var(--main-color);">[後台登入]</button>
             </form>
         }
         else
         {
-            <a class="btn btn-link" href="/Account/Login" style="color: var(--main-color);">[Admin Login]</a>
+            <a class="btn btn-link" href="/Account/Login" style="color: var(--main-color);">[登出]</a>
         }
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
