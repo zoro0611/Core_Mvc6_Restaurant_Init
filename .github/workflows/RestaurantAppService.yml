@@ -1,10 +1,10 @@
-name: 建置 .NET Core 應用程式並部署到 Web 應用程式 RestaurantInit20230722
+name: 建置 .NET Core 應用程式並部署到 Web 應用程式 RestaurantAppService
 on:
   push:
     branches:
     - master
 env:
-  AZURE_WEBAPP_NAME: RestaurantInit20230722
+  AZURE_WEBAPP_NAME: RestaurantAppService
   AZURE_WEBAPP_PACKAGE_PATH: Restaurant_Init\published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 6.0.x
@@ -44,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.RestaurantInit20230722_B16B }}
+        publish-profile: ${{ secrets.RestaurantAppService_853E }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
