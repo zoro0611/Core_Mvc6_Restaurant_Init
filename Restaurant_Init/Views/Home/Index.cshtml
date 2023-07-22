@@ -1,0 +1,15 @@
+﻿@using Restaurant_Init.Models.DBModels;
+@model List<User>;
+@{
+    ViewData["Title"] = "Home";
+}
+<h1>@ViewData["Title"]</h1>
+
+@{
+    foreach (var user in Model)
+    {
+        <p>@user.Id</p>
+        <p>@user.Username</p>
+        <p>@user.LastLoginDateTime</p>
+    }
+}
