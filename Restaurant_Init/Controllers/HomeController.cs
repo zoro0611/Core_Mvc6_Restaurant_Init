@@ -19,8 +19,8 @@ namespace Restaurant_Init.Controllers
         //[Authorize]
         public IActionResult Index()
         {
-            var list = _commonService.GetUser();
-            return View(list);
+            
+            return View();
             
         }
         [Authorize]
