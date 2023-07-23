@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "";
+    ViewData["Title"] = "管理後臺";
+    string username = Context.Request.Cookies["AdminName"];
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/backstage.css" asp-append-version="true" />
+
+</head>
+<body>
+
+    
+    <div class="d-flex align-items-center">
+        <span style="color: var(--main-color);">您好，@username</span>
+        <form class="d-inline" asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+            <button type="submit" class="btn btn-link" style="color: var(--main-color);">[登出]</button>
+        </form>
+    </div>
+    <p>123</p>
+
+
+    
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

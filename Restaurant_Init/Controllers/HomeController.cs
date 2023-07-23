@@ -24,7 +24,7 @@ namespace Restaurant_Init.Controllers
             
         }
         [Authorize]
-        public IActionResult Privacy()
+        public IActionResult BackStage()
         {
             return View();
         }
