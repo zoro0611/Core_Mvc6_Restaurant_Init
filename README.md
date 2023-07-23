@@ -10,15 +10,19 @@
   it to attract tourists who wish to find a fine place for a leisure meal break.
 二. 使用技術 (Practiced TechPack)
   1. 前端技術(Frontend)
+     
      (a) BootStrap
      (b) Native JavaScript
      (c) Vue.js (Maybe used)
-  2. 資料庫(Database):
+  3. 資料庫(Database):
+
      (a) 設計後台表格
-  3. 後端技術(Backend)
+  4. 後端技術(Backend)
+     
      (a) .Net Core 6 MVC with Clean Architecture => Repository/Services/Views
      (b) .Net Core 6 Entity Framework
-  4. 雲端部署DevOps:
+  5. 雲端部署DevOps:
+     
      (a) Github CI/CD Automated Publish to Azure
      (b) Azure Sql Server and database
      (c) Azure App Service
