@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Restaurant_Init.Models.DBModels;
+using Restaurant_Init.Models.EmailModels;
 using Restaurant_Init.Repos;
 using Restaurant_Init.Services;
+using Restaurant_Init.Services.EmailService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,9 @@ builder.Services.AddAuthentication("MyCookieAuthenticationScheme")
         options.LoginPath = "/Account/Login";
     });
 
+//EMail
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddSingleton<IMailService, MailService>();
 
 var app = builder.Build();
 
