@@ -1,3 +1,8 @@
-p{
-    background: red;
+#divide-line{
+    border-bottom: 15px solid red;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+header, main, footer{
+    padding: 0 20px;
 }

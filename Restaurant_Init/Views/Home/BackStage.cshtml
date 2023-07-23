@@ -6,32 +6,60 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/backstage.css" asp-append-version="true" />
-
 </head>
+
 <body>
 
-    
-    <div class="d-flex align-items-center">
-        <span style="color: var(--main-color);">您好，@username</span>
-        <form class="d-inline" asp-area="" asp-controller="Account" asp-action="Logout" method="post">
-            <button type="submit" class="btn btn-link" style="color: var(--main-color);">[登出]</button>
-        </form>
-    </div>
-    <p>123</p>
+    <header>
+        <div class="d-flex align-items-center">
+            <span style="color: var(--main-color);">您好，@username</span>
+            <form class="d-inline" asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                <button type="submit" class="btn btn-link" style="color: var(--main-color);">[登出]</button>
+            </form>
+        </div>
+    </header>
 
 
-    
+    <div id="divide-line"></div>
+    <main>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-menu-tab" data-bs-toggle="tab" data-bs-target="#nav-menu"
+                    type="button" role="tab" aria-controls="nav-menu" aria-selected="true">菜單管理</button>
+                <button class="nav-link" id="nav-activity-tab" data-bs-toggle="tab" data-bs-target="#nav-activity"
+                    type="button" role="tab" aria-controls="nav-activity" aria-selected="false">活動設定</button>
+                <button class="nav-link" id="nav-password-tab" data-bs-toggle="tab" data-bs-target="#nav-password"
+                    type="button" role="tab" aria-controls="nav-password" aria-selected="false">密碼更改</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-menu" role="tabpanel" aria-labelledby="nav-menu-tab"
+                tabindex="0">菜單管理</div>
+            <div class="tab-pane fade" id="nav-activity" role="tabpanel" aria-labelledby="nav-activity-tab"
+                tabindex="0">
+                活動設定
+            </div>
+            <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab"
+                tabindex="0">
+                密碼更改
+            </div>
+        </div>
+    </main>
+
+
+
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
+
 </html>
