@@ -52,6 +52,10 @@ namespace Restaurant_Init.Models.DBModels
                     .HasMaxLength(100)
                     .HasDefaultValueSql("('')");
 
+                entity.Property(e => e.Description)
+                    .HasMaxLength(2000)
+                    .HasDefaultValueSql("('')");
+
                 entity.Property(e => e.DishName)
                     .HasMaxLength(50)
                     .HasDefaultValueSql("('')");
@@ -59,6 +63,10 @@ namespace Restaurant_Init.Models.DBModels
                 entity.Property(e => e.Image)
                     .HasMaxLength(4000)
                     .HasDefaultValueSql("('')");
+
+                entity.Property(e => e.IsClassic)
+                    .HasMaxLength(5)
+                    .HasDefaultValueSql("('N')");
             });
 
             modelBuilder.Entity<User>(entity =>

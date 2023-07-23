@@ -13,7 +13,8 @@ builder.Services.AddDbContext<RestaurantContext>(
         options.UseSqlServer(builder.Configuration.GetConnectionString("Restaurant"))
 );
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
-builder.Services.AddScoped<CommonService>();
+builder.Services.AddScoped<CommonService>(); 
+builder.Services.AddScoped<MenuService>(); 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

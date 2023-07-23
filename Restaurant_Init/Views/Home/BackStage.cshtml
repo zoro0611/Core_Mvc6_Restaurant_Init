@@ -1,7 +1,9 @@
-﻿@{
+﻿@using Restaurant_Init.Models.DBModels;
+@{
     Layout = "";
     ViewData["Title"] = "管理後臺";
     string username = Context.Request.Cookies["AdminName"];
+    List<Menu> menus = (List<Menu>)ViewData["Menu"];
 }
 
 <!DOCTYPE html>
@@ -42,7 +44,21 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-menu" role="tabpanel" aria-labelledby="nav-menu-tab"
-                tabindex="0">菜單管理</div>
+                tabindex="0">
+                @{
+                    int count = 1;
+                    foreach(var menu in menus)
+                    {
+                        <p>
+                            <span>No. @(count) - </span>
+                            <span>菜色: @menu.DishName</span>
+                            <span>菜色: @menu.Description</span>
+                            <span>價格: @(menu.Price) NTD</span>
+                        </p>
+                        count++;
+                    }
+                }
+            </div>
             <div class="tab-pane fade" id="nav-activity" role="tabpanel" aria-labelledby="nav-activity-tab"
                 tabindex="0">
                 活動設定

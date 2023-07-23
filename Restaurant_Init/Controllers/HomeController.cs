@@ -10,11 +10,14 @@ namespace Restaurant_Init.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly CommonService _commonService;
+        private readonly MenuService _menuService;
 
-        public HomeController(ILogger<HomeController> logger, CommonService commonService)
+
+        public HomeController(ILogger<HomeController> logger, CommonService commonService, MenuService menuService)
         {
             _logger = logger;
             _commonService = commonService;
+            _menuService = menuService;
         }
         //[Authorize]
         public IActionResult Index()
@@ -26,6 +29,7 @@ namespace Restaurant_Init.Controllers
         [Authorize]
         public IActionResult BackStage()
         {
+            ViewData["Menu"] = _menuService.GetAllMenu();
             return View();
         }
 

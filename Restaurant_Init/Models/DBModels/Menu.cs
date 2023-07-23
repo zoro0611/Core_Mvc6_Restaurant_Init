@@ -13,5 +13,7 @@ namespace Restaurant_Init.Models.DBModels
         public DateTime CreateDate { get; set; }
         public string CreateId { get; set; } = null!;
         public string CreateName { get; set; } = null!;
+        public string IsClassic { get; set; } = null!;
+        public string Description { get; set; } = null!;
     }
 }
