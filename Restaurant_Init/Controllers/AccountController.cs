@@ -69,7 +69,11 @@ namespace Restaurant_Init.Controllers
         {
             // 呼叫 ASP.NET Core 的登出方法
             await HttpContext.SignOutAsync("MyCookieAuthenticationScheme");
-
+            //刪除所有Cookies
+            foreach (var cookie in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookie);
+            }
             // 重定向到登出後的頁面
             return RedirectToAction("Index", "Home");
         }
