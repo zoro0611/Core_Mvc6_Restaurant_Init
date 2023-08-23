@@ -12,6 +12,7 @@ builder.Services.AddDbContext<RestaurantContext>(
     options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("Restaurant"))
 );
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
 builder.Services.AddScoped<CommonService>(); 
 builder.Services.AddScoped<MenuService>(); 
@@ -49,6 +50,12 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
+
+//app.Map("/{controller=Home}/{action=BackStage}", appBuilder =>
+//{
+//    appBuilder.UseMiddleware<JwtExpirationMiddleware>();
+//});
 
 app.Run();

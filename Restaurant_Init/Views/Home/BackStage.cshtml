@@ -1,9 +1,16 @@
 ﻿@using Restaurant_Init.Models.DBModels;
+@using System.Text.Json;
+
 @{
     Layout = "";
     ViewData["Title"] = "管理後臺";
-    string username = Context.Request.Cookies["AdminName"];
+    string username = Context.Request.Cookies["AdminId"];
     List<Menu> menus = (List<Menu>)ViewData["Menu"];
+}
+@{
+    //取得Cookie
+    string token = Context.Request.Cookies["token"];
+    string jsonToken = JsonSerializer.Serialize(token);
 }
 
 <!DOCTYPE html>
@@ -75,7 +82,12 @@
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-
+    <script>
+        const token = @Html.Raw(jsonToken);
+        window.onload = function () {
+            localStorage.setItem('token', token)
+        }
+    </script>
 </body>
 
 </html>

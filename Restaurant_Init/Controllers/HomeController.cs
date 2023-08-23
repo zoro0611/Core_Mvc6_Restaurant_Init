@@ -26,7 +26,7 @@ namespace Restaurant_Init.Controllers
             return View();
             
         }
-        [Authorize]
+        //[Authorize]
         public IActionResult BackStage()
         {
             ViewData["Menu"] = _menuService.GetAllMenu();
