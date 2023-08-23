@@ -1,4 +1,8 @@
 # Core_Mvc6_Restaurant_Init
+Azure網址: https://restaurantappservice.azurewebsites.net/
+測試帳號: test123admin
+測試密碼: admin123test
+
 一. 專案想法 (Side_Project ideas)
   1. 2023/7月開始開發 
   2. 主要目的是自學實作一些2022/10月轉職班畢業後，開始求職時不會的後端功能，Ex: 使用Microsoft.AspNetCore.Identity實作登入驗證, 簡易Github Action部署上Azure App Service, 使用Azure Sql Server並讓app在Dev環境使用User Secrets連線字串的設定檔&Production環境使用Azure App Configuration的連線字串
@@ -28,3 +32,7 @@
      (c) Azure App Service
 
 Last updated: 2023/7/23 by Leo
+
+2023/8/24 更新 by Leo
+1. 這次想要實作JwtToken的功能，於是乎我先開了一個WebAPI的專案，並且deploy到Azure Web Service，專案同樣運用Entity Framework Core來做簡易驗證使用者帳密，並且產生jwt token回傳的POST API。
+2. 在本專案將Cookies驗證改成，使用者輸入帳密之後，得到jwt token，但是在進入後台前，仍然要先解析jwt的expire time是否有效，如果失效還是要重新登入，如果jwt token有效則無需登入可直接進入後台直到失效or使用者登出。
