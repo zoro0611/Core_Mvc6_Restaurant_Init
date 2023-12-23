@@ -6,7 +6,7 @@ namespace Restaurant_Init.Models.ViewModels
         [Required(ErrorMessage = "請輸入使用者帳號")]
         //顯示名稱
         [Display(Name = "登入帳號")]
-        public string UserId { get; set; }
+        public string Username { get; set; }
 
         [Required(ErrorMessage = "請輸入密碼")]
         [Display(Name = "登入密碼")]

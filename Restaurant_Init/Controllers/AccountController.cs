@@ -55,7 +55,7 @@ namespace Restaurant_Init.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     string token = await response.Content.ReadAsStringAsync();
-                    Response.Cookies.Append("AdminId", model.UserId);
+                    Response.Cookies.Append("AdminId", model.Username);
                     Response.Cookies.Append("token", token);
                     return RedirectToAction("BackStage", "Home");
 
